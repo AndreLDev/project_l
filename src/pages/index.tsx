@@ -2,7 +2,8 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import styles from "../styles/home.module.scss";
 import { getPrismicClient } from "../services/prismic";
-import {RichText, Link} from 'prismic-dom';
+import { RichText, Link } from 'prismic-dom';
+import Image from "next/image";
 
 
 type Content = {
@@ -20,11 +21,11 @@ type Content = {
   linkWeb: string
 }
 
-interface ContentProps{
+interface ContentProps {
   content: Content
 }
 
-export default function Home({content} : ContentProps) {
+export default function Home({ content }: ContentProps) {
 
   return (
     <>
@@ -33,7 +34,16 @@ export default function Home({content} : ContentProps) {
       </Head>
       <main className={styles.container}>
         <div className={styles.containerHeader}>
-          <img src={content.titleBaner} alt="contents" />
+          <Image
+            src={content.titleBaner}
+            alt={content.title}
+            width={720}
+            height={410}
+            quality={100}
+            layout="responsive"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0tTVeCwACyAFcwiB+6wAAAABJRU5ErkJggg=="
+          />
           <section className={styles.ctaText}>t
             <h1>{content.title}</h1>
             <span>{content.titleContent}</span>
@@ -43,13 +53,22 @@ export default function Home({content} : ContentProps) {
               </button>
             </a>
           </section>
-        
+
         </div>
 
         <hr className={styles.divisor} />
 
         <div className={styles.sectionContent}>
-          <img src={content.mobileBanner} alt="" />
+        <Image
+            src={content.mobileBanner}
+            alt={content.mobileTitle}
+            width={720}
+            height={410}
+            quality={100}
+            layout="responsive"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0tTVeCwACyAFcwiB+6wAAAABJRU5ErkJggg=="
+          />
           <section className={styles.ctaText}>
             <h2>{content.mobileTitle}</h2>
             <span>{content.mobileContent}</span>
@@ -65,7 +84,16 @@ export default function Home({content} : ContentProps) {
         <hr className={styles.divisor} />
 
         <div className={styles.sectionContent}>
-          <img src={content.webBanner} alt="" />
+        <Image
+            src={content.webBanner}
+            alt={content.webTitle}
+            width={720}
+            height={410}
+            quality={100}
+            layout="responsive"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0tTVeCwACyAFcwiB+6wAAAABJRU5ErkJggg=="
+          />
 
           <section className={styles.ctaText}>
             <h2>{content.webTitle}</h2>
@@ -85,7 +113,7 @@ export default function Home({content} : ContentProps) {
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  
+
   const prismic = getPrismicClient();
 
   const response = await prismic.getByUID('home', 'aquila-clean-energy--part-of-the-solution-to-decar');
@@ -111,8 +139,8 @@ export const getStaticProps: GetStaticProps = async () => {
     linkWeb: link_web
   }
 
-  return{
-    props:{
+  return {
+    props: {
       content
     },
     revalidate: 60 * 2
