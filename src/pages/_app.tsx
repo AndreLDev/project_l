@@ -1,6 +1,20 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import '../styles/global.scss';
+import { PrismicProvider } from '@prismicio/react'
+import {Header} from '../components/Header'
+import { getPrismicClient } from "../services/prismic";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function App({ Component, pageProps }: AppProps) {
+  const prismic = getPrismicClient();
+  return(
+    <>
+      <PrismicProvider client={prismic}>
+        <Header/>
+        <Component {...pageProps} />
+      </PrismicProvider>
+      
+    </>
+  )
 }
+
+export default App

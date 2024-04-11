@@ -1,0 +1,166 @@
+
+
+.container{
+  display: block;
+}
+
+.containerHeader{
+  min-height: calc(100vh - 5rem);
+  margin: 0 auto;
+  max-width: 1120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img{
+    max-width: 640px;
+  }
+}
+
+.ctaText{
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+
+  h1{
+    font-size: 2.3rem;
+    line-height: 4rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+    color: var(--white);
+  }
+
+  span{
+    font-size: 1rem;
+    line-height: 2.25rem;
+    color: var(--white);
+  }
+
+  button{
+    background-color: var(--blue-900);
+    border:0;
+    padding: 1rem 1.8rem;
+    margin-top: 2.5rem;
+    border-radius: 7px;
+    color: var(--white);
+    font-weight: bold;
+  }
+}
+
+.divisor{
+  width: 100%;
+  bottom: 0;
+  height: 1px;
+  border-color: var(--gray-200)
+}
+
+
+.sectionContent{
+  margin: 5.5rem auto;
+  max-width: 1120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  section{
+    max-width: 670px;
+  }
+
+
+  img{
+    max-width: 550px;
+  }
+
+  h2{
+    font-size: 2.2rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    margin-top: 2.2rem;
+    margin-left: 2rem;
+    color: var(--white);
+  }
+
+  span{
+    font-size: 1rem;
+    line-height: 2.25rem;
+    color: var(--white);
+    margin-left: 2rem;
+  }
+  button{
+    margin-left: 2rem;
+  }
+}
+
+
+
+@media (max-width: 1095px){
+  .container{
+    .containerHeader{
+      padding: 0 2rem;
+
+      button{
+        display: block;
+      }
+    }
+
+    img{
+      max-width: 600px;
+      margin-top: 2rem;
+    }
+
+    div h1{
+      font-size: 3rem;
+    }
+
+    div h2{
+      font-size: 2.3rem;
+
+      span{
+        font-size: 2.3rem;
+      }
+    }
+
+    .sectionContent{
+      padding: 0 2rem;
+    }
+  }
+}
+
+
+@media (max-width: 950px){
+  .container{
+    .containerHeader{
+      flex-direction: column;
+
+      button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    div img{
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+
+    div h1{
+      font-size: 3rem;
+    }
+
+    h2{
+      font-size: 1rem;
+    }
+
+    .sectionContent{
+      flex-direction: column;
+
+      img{
+        margin-top: 2rem;
+        max-width: 100%;
+      }
+    }
+  }
+}
