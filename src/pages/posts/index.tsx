@@ -3,7 +3,6 @@ import Head from "next/head";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import thumbImg from "../../../public/images/image7.png"
 import {FiChevronLeft, FiChevronsLeft, FiChevronRight, FiChevronsRight} from "react-icons/fi";
 import {RichText} from 'prismic-dom';
 import { getPrismicClient } from "../../services/prismic";

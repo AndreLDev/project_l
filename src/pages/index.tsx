@@ -1,10 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import styles from "../styles/home.module.scss";
-import Image from "next/image";
-import Techs from "../../public/images/techs.svg"
 import { getPrismicClient } from "../services/prismic";
-import * as Prismic from '@prismicio/client'
 import {RichText, Link} from 'prismic-dom';
 
 
