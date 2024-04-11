@@ -33,6 +33,7 @@ export default function Home({content} : ContentProps) {
       </Head>
       <main className={styles.container}>
         <div className={styles.containerHeader}>
+          <img src={content.titleBaner} alt="contents" />
           <section className={styles.ctaText}>t
             <h1>{content.title}</h1>
             <span>{content.titleContent}</span>
@@ -43,12 +44,12 @@ export default function Home({content} : ContentProps) {
             </a>
           </section>
         
-          <img src={content.titleBaner} alt="contents" />
         </div>
 
         <hr className={styles.divisor} />
 
         <div className={styles.sectionContent}>
+          <img src={content.mobileBanner} alt="" />
           <section className={styles.ctaText}>
             <h2>{content.mobileTitle}</h2>
             <span>{content.mobileContent}</span>
@@ -58,7 +59,6 @@ export default function Home({content} : ContentProps) {
               </button>
             </a>
           </section>
-          <img src={content.mobileBanner} alt="" />
         </div>
 
 

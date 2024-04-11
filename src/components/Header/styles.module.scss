@@ -18,7 +18,7 @@
     }
 
     nav{
-        margin-left: 5rem;
+        margin-left: 0.5rem;
         height: 6rem;
 
         span{
@@ -61,6 +61,10 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+
+            span{
+                padding: 0 0.5rem;
+            }
         }
     }
 }

@@ -98,10 +98,10 @@
   .container{
     .containerHeader{
       padding: 0 2rem;
-
-      button{
-        display: block;
-      }
+    }
+    button{
+      display: block;
+      margin-left: 0;
     }
 
     img{
@@ -132,13 +132,16 @@
   .container{
     .containerHeader{
       flex-direction: column;
+      min-height: calc(100vh - 30rem);
+      justify-content: center;
+    }
 
-      button{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    button{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-self: center;
     }
 
     div img{
@@ -147,7 +150,7 @@
     }
 
     div h1{
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     h2{
